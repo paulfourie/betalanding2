@@ -13,6 +13,7 @@ import java.util.Map;
  * they get replaced when the actual html content gets generated. So these can be defined and made use of any which
  * convenient fashion a developer would prefer keeping in mind to avoid boiler-plate code and DRY principle.
  */
+
 @Controller
 public abstract class mController {
 

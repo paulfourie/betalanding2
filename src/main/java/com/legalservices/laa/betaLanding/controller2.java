@@ -17,4 +17,5 @@ public class controller2 extends mController {
         System.out.println("params "+params());
         return new ModelAndView("index", params());
     }
+    
 }
