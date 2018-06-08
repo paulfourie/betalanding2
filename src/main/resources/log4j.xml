@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/">
+
+	<appender name="stdout" class="org.apache.log4j.ConsoleAppender">
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d %-5p [%X{msgId}] %c - %m%n"/>
+		</layout>
+	</appender>
+
+	<appender name="errorfile" class="org.apache.log4j.RollingFileAppender">
+		<param name="maxFileSize" value="10MB" />
+		<param name="maxBackupIndex" value="5" />
+		<param name="File" value="@ccms.pui.logging.dir@/ccms_pui_err@ccms.pui.deliverable.suffix@.log" />
+		<param name="threshold" value="warn" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d %-5p [%X{msgId}] %c - %m%n"/>
+		</layout>
+	</appender>
+
+	<appender name="debugfile" class="org.apache.log4j.RollingFileAppender">
+		<param name="maxFileSize" value="10MB" />
+		<param name="maxBackupIndex" value="5" />
+		<param name="File" value="@ccms.pui.logging.dir@/ccms_pui_app@ccms.pui.deliverable.suffix@.log" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d %-5p [%X{msgId}] %c - %m%n"/>
+		</layout>
+		<filter class="org.apache.log4j.varia.LevelRangeFilter">
+			<param name="LevelMin" value="debug" />
+			<param name="LevelMax" value="info" />
+		</filter>
+	</appender>
+
+	<appender name="hibernateLog" class="org.apache.log4j.RollingFileAppender">
+		<param name="maxFileSize" value="10MB" />
+		<param name="maxBackupIndex" value="5" />
+		<param name="File" value="@ccms.pui.logging.dir@/hibernate@ccms.pui.deliverable.suffix@.log" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d %-5p [%X{msgId}] %c - %m%n"/>
+		</layout>
+	</appender>
+
+	<appender name="ebsLog" class="org.apache.log4j.RollingFileAppender">
+		<param name="maxFileSize" value="10MB" />
+		<param name="maxBackupIndex" value="5" />
+		<param name="File" value="@ccms.pui.logging.dir@/caciToEBS@ccms.pui.deliverable.suffix@.log" />
+		<param name="threshold" value="debug" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d %-5p [%X{msgId}] %c - %m%n"/>
+		</layout>
+	</appender>
+
+	<appender name="opaLog" class="org.apache.log4j.RollingFileAppender">
+		<param name="maxFileSize" value="10MB" />
+		<param name="maxBackupIndex" value="5" />
+		<param name="File" value="@ccms.pui.logging.dir@/ccmsOpa@ccms.pui.deliverable.suffix@.log" />
+		<param name="threshold" value="debug" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d %-5p [%X{msgId}] %c - %m%n"/>
+		</layout>
+	</appender>
+	<logger name="com.legalservices.laa.ccms" additivity="false">
+		<level value="@ccms.pui.logging.level.ccms@"/>
+		<appender-ref ref="errorfile"/>
+		<appender-ref ref="debugfile"/>
+	</logger>
+	<logger name="com.ezgov.legalservices.ccms" additivity="false">
+		<level value="@ccms.pui.logging.level.ccms@"/>
+		<appender-ref ref="errorfile" />
+		<appender-ref ref="debugfile" />
+	</logger>
+
+	<logger name="com.ezgov.legalservices.ccms.ebs" additivity="false">
+		<level value="@ccms.pui.logging.level.ebs@"/>
+		<appender-ref ref="ebsLog" />
+	</logger>
+
+	<logger name="com.ezgov.opa" additivity="false">
+		<level value="@ccms.pui.logging.level.opa@"/>
+		<appender-ref ref="opaLog" />
+	</logger>
+
+	<logger name="com.ezgov.roof.controller.yaim" additivity="false">
+		<level value="@ccms.pui.logging.level.yaim@"/>
+		<appender-ref ref="errorfile" />
+		<appender-ref ref="debugfile" />
+	</logger>
+	
+	<logger name="com.ezgov.roof.controller.yaim.interactions" additivity="false">
+		<level value="@ccms.pui.logging.level.yaim@"/>
+		<appender-ref ref="errorfile" />
+		<appender-ref ref="debugfile" />
+	</logger>
+	
+	<logger name="com.ezgov.roof.controller.yaim.backbutton.BackButtonStack" additivity="false">
+		<level value="error"/>
+		<appender-ref ref="errorfile" />
+		<appender-ref ref="debugfile" />
+	</logger>
+
+	<!-- Set level to 'debug' to output hibernate queries -->
+	<logger name="org.hibernate.SQL">
+    	<level value="error" />
+    	<appender-ref ref="errorfile" />
+		<appender-ref ref="hibernateLog" />
+	</logger>
+
+	<!-- Set level to 'trace' to output the parameter values in hibernate queries -->
+	<logger name="org.hibernate.type.descriptor.sql.BasicBinder">
+    	<level value="error" />
+		<appender-ref ref="hibernateLog" />
+	</logger>
+	
+	<logger name="com.ezgov.roof.view.vim.control.BundleAwareText" additivity="false">
+		<level value="error"/>
+		<appender-ref ref="errorfile" />
+	</logger>
+
+	<logger name="org.apache.commons.beanutils" additivity="false">
+		<level value="fatal"/>
+		<appender-ref ref="errorfile" />
+	</logger>
+
+	<logger name="debug.performance_timer">
+		<level value="@ccms.pui.logging.level.performance_timer@" />
+	</logger>
+
+	<logger name="com.ezgov.roof.utils.TimeMeter" additivity="false">
+		<level value="@ccms.pui.logging.level.performance_timer@" />
+		<appender-ref ref="debugfile" />
+	</logger>
+	<!--  hello -->
+	
+	<logger name="uk.gov.laa" additivity="false">
+		<level value="@ccms.pui.logging.level.ccms@"/>
+		<appender-ref ref="errorfile" />
+		<appender-ref ref="debugfile" />
+	</logger>
+	<root>
+		<priority value="warn" />
+		<appender-ref ref="stdout" />
+	</root>
+
+</log4j:configuration>
