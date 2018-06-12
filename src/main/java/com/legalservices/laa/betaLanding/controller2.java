@@ -45,9 +45,7 @@ public class controller2 extends mController {
         
         
         return modelandView;
-        
-        
-        
+    
         
     }
     
