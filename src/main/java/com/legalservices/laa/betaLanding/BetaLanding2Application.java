@@ -11,10 +11,24 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 
+/* weblogic additions */
+import org.springframework.boot.builder.SpringApplicationBuilder;
+/* import org.springframework.boot.context.web.SpringBootServletInitializer; */
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 
-@SpringBootApplication
-public class BetaLanding2Application {
 
+import org.springframework.boot.context.web.SpringBootServletInitializer;
+
+
+@Configuration
+@ComponentScan
+/* @SpringBootApplication */ 
+@EnableAutoConfiguration
+public class BetaLanding2Application extends SpringBootServletInitializer {
+
+	
 	private static final Logger logger = LogManager.getLogger( BetaLanding2Application.class );
 
 	
@@ -23,11 +37,22 @@ public class BetaLanding2Application {
 	}
 	
 	
+ 	@Override  
+    protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
+        return application.sources(applicationClass);
+    }
+
+	
+    private static Class<Application> applicationClass = Application.class;	
+	
+	
+	
 /*    @Override  */
-    public void run(ApplicationArguments applicationArguments) throws Exception {
+/*    public void run(ApplicationArguments applicationArguments) throws Exception {
         logger.error( "Error. OK? " );
     }
-	
+*/
+    
 	
 }
 
