@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.moj.laa</groupId>
-	<artifactId>betaLanding</artifactId>
+	<artifactId>betaLanding2</artifactId>
 	<version>0.0.2</version>
 	<packaging>war</packaging>
 
@@ -22,6 +22,7 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<java.version>1.8</java.version>
+		<start-class>com.legalservices.laa.betaLanding2</start-class>
 	</properties>
 
 
@@ -70,27 +71,5 @@
 		
 	</dependencies>
 
-<!-- 
-	<build>
-		<plugins>
-			<plugin>
-				<groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-maven-plugin</artifactId>
-			</plugin>
-	        <plugin>
-		        <groupId>org.apache.maven.plugins</groupId>
-		        <artifactId>maven-war-plugin</artifactId>
-		        <configuration>
-		           <failOnMissingWebXml>false</failOnMissingWebXml>
-		           <archive>
-		              <manifest>
-		                 <addDefaultImplementationEntries>false</addDefaultImplementationEntries>
-		              </manifest>
-		           </archive>
-		        </configuration>
-		     </plugin>			
-		</plugins>
-	</build>
--->
 
 </project>

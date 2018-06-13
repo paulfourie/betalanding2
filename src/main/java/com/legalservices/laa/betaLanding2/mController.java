@@ -1,4 +1,4 @@
-package com.legalservices.laa.betaLanding;
+package com.legalservices.laa.betaLanding2;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;

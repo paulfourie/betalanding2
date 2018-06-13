@@ -1,4 +1,4 @@
-package com.legalservices.laa.betaLanding;
+package com.legalservices.laa.betaLanding2;
 
 
 import org.springframework.stereotype.Controller;
@@ -9,15 +9,15 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import javax.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import org.apache.logging.log4j.Logger;
-import org.apache.logging.log4j.LogManager;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 
 @Controller
 public class controller2 extends mController {
 
     
-	public static Logger log = LogManager.getLogger( controller2.class.getName() ) ;	
+	public static Logger log = LoggerFactory.getLogger( controller2.class.getName() ) ;	
 	
 	
 	@Autowired
