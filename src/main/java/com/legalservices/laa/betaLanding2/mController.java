@@ -1,5 +1,8 @@
 package com.legalservices.laa.betaLanding2;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 
@@ -17,6 +20,9 @@ import java.util.Map;
 @Controller
 public abstract class mController {
 
+	public static Logger log = LoggerFactory.getLogger( mController.class.getName() ) ;	
+	
+	
     @Value("${topOfPage}")
     private String topOfPage;
 
@@ -112,6 +118,8 @@ public abstract class mController {
         params.put("logoLinkTitle", logoLinkTitle);
 
         params.put("crownCopyrightMessage", crownCopyrightMessage);
+        
+/*        log.info( "built mustache params" ) ;   */
         return params;
     }
 

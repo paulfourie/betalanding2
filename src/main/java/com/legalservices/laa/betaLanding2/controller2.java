@@ -17,7 +17,7 @@ import org.slf4j.LoggerFactory;
 public class controller2 extends mController {
 
     
-	public static Logger log = LoggerFactory.getLogger( controller2.class.getName() ) ;	
+	public static final Logger log = LoggerFactory.getLogger( controller2.class ) ;	/* .getName()  */
 	
 	
 	@Autowired
@@ -32,20 +32,28 @@ public class controller2 extends mController {
 	/* , headers = "content-type=text/*"   */
     @RequestMapping( value="/" , method = RequestMethod.GET )
     public ModelAndView index() {
-    	
-    	
-    	
-        System.out.println("params "+params());
+    	    	
+    	/* output mustache parameters */   	
+        /* System.out.println("params " + params());  */
         
-    
+/*    	return new ModelAndView("index", params());  */
+    	
         ModelAndView modelandView = new ModelAndView("index", params());
         
         String OssoUser = request.getHeader("Osso-User-Guid"); 
         log.info( "OssoUser " + OssoUser ) ;   
         
-        
         return modelandView;
-    
+        
+        /*
+        try {
+        	return modelandView;
+        }
+        catch( Exception e ){
+        	log.error( e.getMessage() ) ; 
+        	return modelandView;
+        }
+        */
         
     }
     
