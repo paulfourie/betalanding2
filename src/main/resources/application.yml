@@ -7,7 +7,7 @@ spring:
 
 topOfPage: 
 htmlLang: EN
-pageTitle: GOV.UK - The best place to find government services and information
+pageTitle: LAA CCMS Beta
 assetPath: /ccms_beta/govuk_modules/govuk_template/assets/
 head:
 bodyStart:
