@@ -1,7 +1,10 @@
-package com.legalservices.laa.betaLanding2;
+package com.legalservices.laa.BetaLanding2;
 
+/*
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import java.lang.invoke.MethodHandles;
+*/
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
@@ -20,8 +23,8 @@ import java.util.Map;
 @Controller
 public abstract class mController {
 
-	public static Logger log = LoggerFactory.getLogger( mController.class.getName() ) ;	
-	
+/*	public static Logger log = LoggerFactory.getLogger( mController.class.getName() ) ;	*/
+/*	final static Logger logger = LoggerFactory.getLogger( MethodHandles.lookup().lookupClass() ) ;	/* .getName()  */	
 	
     @Value("${topOfPage}")
     private String topOfPage;

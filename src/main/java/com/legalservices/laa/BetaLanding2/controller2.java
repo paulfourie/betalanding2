@@ -1,4 +1,4 @@
-package com.legalservices.laa.betaLanding2;
+package com.legalservices.laa.BetaLanding2;
 
 
 import org.springframework.stereotype.Controller;
@@ -9,16 +9,18 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import javax.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import java.lang.invoke.MethodHandles;
 
 
 @Controller
 public class controller2 extends mController {
 
     
-	public static final Logger log = LoggerFactory.getLogger( controller2.class ) ;	/* .getName()  */
-	
+	final static Logger logger = LoggerFactory.getLogger( MethodHandles.lookup().lookupClass() ) ;   
+
 	
 	@Autowired
 	private HttpServletRequest request;
@@ -41,19 +43,10 @@ public class controller2 extends mController {
         ModelAndView modelandView = new ModelAndView("index", params());
         
         String OssoUser = request.getHeader("Osso-User-Guid"); 
-        log.info( "OssoUser " + OssoUser ) ;   
+        logger.info( "OssoUser " + OssoUser ) ;   
         
         return modelandView;
         
-        /*
-        try {
-        	return modelandView;
-        }
-        catch( Exception e ){
-        	log.error( e.getMessage() ) ; 
-        	return modelandView;
-        }
-        */
         
     }
     

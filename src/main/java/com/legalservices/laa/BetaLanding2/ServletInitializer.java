@@ -1,4 +1,4 @@
-package com.legalservices.laa.betaLanding2;
+package com.legalservices.laa.BetaLanding2;
 
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;

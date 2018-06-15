@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+
+    <include resource="org/springframework/boot/logging/logback/base.xml"/>
+    <include resource="org/springframework/boot/logging/logback/defaults.xml" />
+    
+    /*  logs/opb_mserver1.log  */
+    /*  /app_base/DEVOPA10/Middleware/user_projects/domains/devopa10_domain/servers/opa_mserver1/pui_logs    */
+    
+    <Properties>
+        <Property name="LOG-PATH">/app_base/DEVOPA10/Middleware/user_projects/domains/devopa10_domain/servers/opa_mserver1/pui_logs</Property>
+        <property name="LOG_FILE" value="${LOG_FILE:-${LOG_PATH:-${LOG_TEMP:-${java.io.tmpdir:-/tmp}}/}spring.log}"/>
+    </Properties>
+    
+    <Appenders>
+          
+        <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+	        <encoder>
+	            <pattern>%d{dd-MM-yyyy HH:mm:ss.SSS} %magenta([%thread]) %highlight(%-5level) %logger{36}.%M - %msg%n</pattern>
+	        </encoder>
+        </appender>
+        
+		<appender name="FILE" class="ch.qos.logback.core.FileAppender">
+		    <file>${LOG_PATH}/betalanding.log</file>
+		    <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+		        <Pattern>
+		            %d{dd-MM-yyyy HH:mm:ss.SSS} [%thread] %-5level %logger{36}.%M - %msg%n
+		        </Pattern>
+		    </encoder>
+		    
+		    <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+		        <fileNamePattern>${LOG_PATH}/archived/log_%d{dd-MM-yyyy}.log</fileNamePattern>
+		        <maxHistory>10</maxHistory>
+		        <totalSizeCap>25MB</totalSizeCap>
+    		</rollingPolicy>
+    
+		</appender>        
+        
+    </Appenders>
+     
+<!--          
+    <encoder>
+      	<pattern>%-4relative [%thread] %-5level %logger{35} - %msg%n</pattern>
+    </encoder>
+-->
+           
+    <logger name="org.springframework.web" level="WARN" additivity="false">
+        <appender-ref ref="STDOUT"/>
+    	<appender-ref ref="FILE"/>	
+    </logger>
+    <logger name="com.legalservices.laa" level="WARN" additivity="false">
+        <appender-ref ref="STDOUT"/>
+        <appender-ref ref="FILE"/>   
+    </logger>
+    
+    <root level="INFO">
+		<appender-ref ref="STDOUT" />
+		<appender-ref ref="FILE"/> 
+	</root>
+	
+       
+ </configuration>
