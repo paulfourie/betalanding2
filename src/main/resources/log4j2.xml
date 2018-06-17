@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="TRACE">
+<Properties>
+<!-- <Property name="log-path">/app_base/DEVOPB10/Middleware/user_projects/domains/devopb10_domain/servers/opb_mserver1/pui_logs</Property>   -->
+<Property name="log-path">$DOMAIN_HOME/servers/puibeta_server1/logs</Property>
+<!-- $DOMAIN_HOME/servers/puibeta_server1/logs -->
+</Properties>
+
+<Appenders>
+
+	  <appender name="Console" class="org.apache.log4j.ConsoleAppender">
+	    <param name="Target" value="System.out"/>
+	    <layout class="org.apache.log4j.PatternLayout"> 
+	      <param name="ConversionPattern" value="%-5p %c{1} - %m%n"/> 
+	    </layout> 
+	  </appender> 
+  
+      <appender name="File" class="org.apache.log4j.FileAppender">
+        <param name="file" value="${log-path}/ccms_beta_landing.log"/>
+	    <layout class="org.apache.log4j.PatternLayout"> 
+	      <param name="ConversionPattern" value="%-5p %c{1} - %m%n"/> 
+	    </layout>             
+      </appender>
+
+</Appenders>
+
+<Loggers>
+
+	    <Logger name="com.legalservices.laa.BetaLanding2" additivity="false">
+	      <level value ="trace"/> 	
+	      <appender-ref ref="Console"/>
+	      <appender-ref ref="File"/>
+	    </Logger>
+    
+        <Root level="error">
+	      <appender-ref ref="Console"/>
+	      <appender-ref ref="File"/>
+        </Root>
+
+</Loggers>
+
+</Configuration>

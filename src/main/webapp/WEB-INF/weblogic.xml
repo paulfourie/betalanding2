@@ -21,15 +21,16 @@
  			<wls:package-name>org.hibernate.*</wls:package-name>	
  			<wls:package-name>javax.validation.*</wls:package-name>	
  			<wls:package-name>javax.validation.spi.*</wls:package-name>	
- 			<wls:package-name>org.slf4j.*</wls:package-name>    
-<!-- 		<wls:package-name>log4j</wls:package-name>    -->
-<!-- 		<wls:package-name>ch.qos.logback.*</wls:package-name>			-->
+ 			<wls:package-name>org.slf4j.*</wls:package-name>   
+ 			<wls:package-name>log4j</wls:package-name>   
 		</wls:prefer-application-packages>
 		
+ 		
 		<wls:prefer-application-resources>
 			<wls:resource-name>org/slf4j/impl/StaticLoggerBinder.class</wls:resource-name>
 		</wls:prefer-application-resources>
 		
+
 		<wls:show-archived-real-path-enabled>true</wls:show-archived-real-path-enabled>	
 		 	
 	</wls:container-descriptor>  
