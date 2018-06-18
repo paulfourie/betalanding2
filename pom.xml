@@ -34,56 +34,45 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
-
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-tomcat</artifactId>
 			<scope>provided</scope>
 		</dependency>
-
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-mustache</artifactId>
-		</dependency>
-		
+		</dependency>		
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
-		</dependency>
-		
+		</dependency>	
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter</artifactId>
-		    <exclusions>
-            <exclusion>
-                    <groupId>${project.groupId}</groupId>
-                    <artifactId>spring-boot-starter-logging</artifactId>
-            </exclusion>
-    	</exclusions>	
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-thymeleaf</artifactId>
 		</dependency>
 
-<!-- 
+
+
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-logging</artifactId>
 			<scope>provided</scope>
 		</dependency>		
- -->		
- 	
 		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-log4j2</artifactId>
+			<groupId>ch.qos.logback</groupId>
+			<artifactId>logback-classic</artifactId>		
 		</dependency>
-		<dependency>
-		    <groupId>org.apache.logging.log4j</groupId>
-		    <artifactId>log4j-api</artifactId>
-		</dependency>
-		<dependency>
-		    <groupId>org.apache.logging.log4j</groupId>
-		    <artifactId>log4j-core</artifactId>
+		
+ 	    <dependency>
+		    <groupId>org.slf4j</groupId>
+		    <artifactId>log4j-over-slf4j</artifactId>
 		</dependency>	
-
 
 
 	    <dependency>
@@ -92,14 +81,12 @@
 	        <version>3.1.0</version>
 	        <scope>provided</scope>
 	    </dependency>
- 
 	     <dependency>
 	        <groupId>org.hibernate</groupId>
 	        <artifactId>hibernate-validator</artifactId>
 	        <version>6.0.1.Final</version>
 	        <scope>provided</scope>
 	    </dependency>
- 		
  		<dependency>
 		    <groupId>javax.el</groupId>
 		    <artifactId>javax.el-api</artifactId>

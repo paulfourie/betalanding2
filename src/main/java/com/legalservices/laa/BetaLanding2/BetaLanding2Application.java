@@ -3,6 +3,7 @@ package com.legalservices.laa.BetaLanding2;
 /*
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import java.lang.invoke.MethodHandles ;
 */
 
 import org.springframework.boot.SpringApplication;
@@ -21,7 +22,7 @@ public class BetaLanding2Application extends SpringBootServletInitializer implem
 
 	
 /*	private static final Logger logger = LoggerFactory.getLogger( BetaLanding2Application.class );   
- */
+*/
 
 	
 	@Override
