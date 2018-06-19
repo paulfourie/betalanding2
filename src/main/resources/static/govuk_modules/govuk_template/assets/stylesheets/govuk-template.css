@@ -324,7 +324,7 @@ button:focus {
     text-decoration: none;
     text-rendering: optimizeLegibility;
     border-bottom: 1px solid transparent;
-    background: url(images/org_crest_27px?0.24.0) no-repeat;
+/*    background: url(/ccms_beta/govuk_modules/govuk_template/assets/images/org_crest_27px?0.24.0) no-repeat; */
     background-size: 36px 32px;
     background-position: 0 0; }
     #global-header #logo img {
