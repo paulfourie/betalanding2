@@ -89,6 +89,14 @@ body {
 ol, ul, nav ol, nav ul {
   list-style: inherit; }
 
+li.indented::before {
+	content: "-";
+	position: relative;
+	float: left;
+	width: 15px;
+	margin-left: 0px;
+}
+
 fieldset {
   border: none;
   padding: 0; }
