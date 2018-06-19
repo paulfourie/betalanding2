@@ -316,7 +316,7 @@ button:focus {
     text-decoration: none;
     text-rendering: optimizeLegibility;
     border-bottom: 1px solid transparent;
-    background: url(images/gov.uk_logotype_crown.png?0.24.0) no-repeat;
+    background: url(images/org_crest_27px?0.24.0) no-repeat;
     background-size: 36px 32px;
     background-position: 0 0; }
     #global-header #logo img {
