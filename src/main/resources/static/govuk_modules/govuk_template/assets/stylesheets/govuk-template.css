@@ -304,7 +304,7 @@ button:focus {
   @media (min-width: 769px) {
     #global-header.with-proposition .header-wrapper .header-global {
       float: left;
-      width: 33.33%; }
+      width: 40.00%; }
       #global-header.with-proposition .header-wrapper .header-global .header-logo,
       #global-header.with-proposition .header-wrapper .header-global .site-search {
         width: 100%; } }
@@ -324,13 +324,13 @@ button:focus {
     text-decoration: none;
     text-rendering: optimizeLegibility;
     border-bottom: 1px solid transparent;
-/*    background: url(/ccms_beta/govuk_modules/govuk_template/assets/images/org_crest_27px?0.24.0) no-repeat; */
-    background-size: 36px 32px;
+/*    background: url(/ccms_beta/govuk_modules/govuk_template/assets/images/org_crest_27px?0.24.0) no-repeat;  */ 
+/*    background-size: 36px 32px;   */
     background-position: 0 0; }
     #global-header #logo img {
       margin: 2px 1px 0 0;
       vertical-align: bottom;
-      visibility: hidden; }
+      visibility: visible; }
     #global-header #logo:hover, #global-header #logo:focus {
       text-decoration: none;
       border-bottom-color: white; }
